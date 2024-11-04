@@ -23,6 +23,17 @@ class TrendPrediction extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 10,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,8 +41,16 @@ class TrendPrediction extends StatelessWidget {
             "Eğilim Tahmini",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          Text(prediction),
-          Text("Pozitif: $positiveCount, Negatif: $negativeCount, Nötr: $neutralCount"),
+          const SizedBox(height: 8),
+          Text(
+            prediction,
+            style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            "Pozitif: $positiveCount, Negatif: $negativeCount, Nötr: $neutralCount",
+            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+          ),
         ],
       ),
     );

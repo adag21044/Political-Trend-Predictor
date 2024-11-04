@@ -11,8 +11,7 @@ class NewsRepository {
   Future<List<Article>> getArticlesWithSentiment() async {
     final articles = await newsService.fetchArticles();
     for (var article in articles) {
-      final sentiment = await aiService.analyzeSentiment(article.title);
-      article.sentiment = sentiment;
+      article.sentiment = await aiService.analyzeSentiment(article.title);
     }
     return articles;
   }

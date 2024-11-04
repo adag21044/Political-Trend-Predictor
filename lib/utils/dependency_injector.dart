@@ -5,7 +5,7 @@ import '../services/news_service.dart';
 
 class DependencyInjector {
   static final DependencyInjector _instance = DependencyInjector._internal();
-  
+
   late NewsViewModel newsViewModel;
 
   factory DependencyInjector() {
