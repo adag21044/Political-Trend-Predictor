@@ -5,8 +5,22 @@ import '../widgets/article_card.dart';
 import '../widgets/trend_chart.dart';
 import '../widgets/trend_prediction.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+    final viewModel = Provider.of<NewsViewModel>(context, listen: false);
+    viewModel.fetchArticles();
+  });
+}
 
   @override
   Widget build(BuildContext context) {

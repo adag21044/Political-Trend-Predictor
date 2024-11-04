@@ -8,11 +8,13 @@ class Article {
   Article({required this.title, required this.description, required this.url, this.sentiment, this.party});
 
   factory Article.fromJson(Map<String, dynamic> json) {
-    return Article(
-      title: json['title'] ?? 'No Title',
-      description: json['description'] ?? 'No Description',
-      url: json['url'] ?? 'No URL',
-      party: json['party'] ?? 'Unknown',
-    );
-  }
+  return Article(
+    title: json['title'] ?? 'No Title',
+    description: json['description'] ?? 'No Description',
+    url: json['url'] ?? 'No URL',
+    party: json['party'] ?? 'Unknown',
+    sentiment: json['sentiment'] ?? 'Unknown',
+  );
+}
+
 }

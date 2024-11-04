@@ -19,9 +19,17 @@ class NewsViewModel extends ChangeNotifier {
     notifyListeners();
     try {
       _articles = await repository.getArticlesWithSentiment();
+      print("Fetched articles: ${_articles.length}");
+      for (var article in _articles) {
+        print("Title: ${article.title}, Sentiment: ${article.sentiment}");
+      }
+    } catch (e) {
+      print("Error fetching articles: $e");
     } finally {
       isLoading = false;
       notifyListeners();
     }
   }
+
+
 }

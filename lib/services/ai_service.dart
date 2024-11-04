@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class AIService {
   final String _apiUrl = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment";
-  final String _apiKey = "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"; // API anahtarınızı buraya ekleyin
+  final String _apiKey = "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"; // API anahtarınızı buraya ekleyin
 
   Future<String> analyzeSentiment(String text) async {
     final response = await http.post(
