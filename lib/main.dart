@@ -30,7 +30,7 @@ class _ElectionPredictorState extends State<ElectionPredictor> {
 
   Future<void> getPrediction() async {
     final response = await http.post(
-      Uri.parse('http://localhost:5000/predict'), // Update to your deployed URL
+      Uri.parse('http://localhost:5000/predict'), // I will update to my deployed URL
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         'data': [
